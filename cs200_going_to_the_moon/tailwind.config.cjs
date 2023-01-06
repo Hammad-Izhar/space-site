@@ -3,6 +3,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
+      fontFamily:{
+        'orbitron': ["Orbitron"],
+        'body': ["Europa", "Helvetica", "sans-serif"]
+      },
       colors: {
         indigo: {
           100: "#e0e2ff",
