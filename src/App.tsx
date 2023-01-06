@@ -1,6 +1,5 @@
 import Navbar from "./components/Navbar";
 import Home from "./sections/HomeSection";
-import ResourceSection from "./sections/ResourceSection";
 import LectureSection from "./sections/LectureSection";
 import AssignmentSection from "./sections/AssignmentSections";
 import LabSection from "./sections/LabSection";
@@ -16,6 +15,7 @@ function App() {
       <LectureSection />
       <AssignmentSection />
       <LabSection />
+      <CalendarSection />
       <StaffSection />
     </>
   );
