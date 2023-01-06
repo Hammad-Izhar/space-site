@@ -30,3 +30,11 @@ export type Lab = {
   out: string;
   solution: string | ReactElement<LinkProps>;
 };
+
+export type Person = {
+  name: string;
+  pronouns: string;
+  hometown: string;
+  about: string;
+  image: string;
+};

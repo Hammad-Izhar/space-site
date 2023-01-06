@@ -1,19 +1,22 @@
 import Navbar from "./components/Navbar";
-import PageBackground from "./components/PageBackground";
-import Home from "./sections/Home";
-import Resources from "./sections/Resources";
-import Lectures from "./sections/Lectures";
-import Assignments from "./sections/Assignments";
-import Labs from "./sections/Labs";
-import Calendars from "./sections/Calendars";
-import Staff from "./sections/Staff";
+import Home from "./sections/HomeSection";
+import ResourceSection from "./sections/ResourceSection";
+import LectureSection from "./sections/LectureSection";
+import AssignmentSection from "./sections/AssignmentSections";
+import LabSection from "./sections/LabSection";
+import CalendarSection from "./sections/CalendarSection";
+import StaffSection from "./sections/StaffSection";
+import StaffCard from "./components/StaffCard";
+import AboutSection from "./sections/AboutSection";
 
 function App() {
   return (
     <>
-      <Lectures />
-      <Assignments />
-      <Labs />
+      <AboutSection />
+      <LectureSection />
+      <AssignmentSection />
+      <LabSection />
+      <StaffSection />
     </>
   );
 }

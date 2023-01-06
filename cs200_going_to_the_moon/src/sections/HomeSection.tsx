@@ -1,4 +1,4 @@
-function Home() {
+function HomeSection() {
   return (
     <section>
       <p>CS 200</p>
@@ -7,4 +7,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeSection;

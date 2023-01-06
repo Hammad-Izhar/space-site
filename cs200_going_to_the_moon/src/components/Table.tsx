@@ -3,6 +3,7 @@ import { LinkProps } from "./Link";
 
 type TableProps = {
   tableHeaders: string[];
+  tableAlignment: ("c" | "l")[];
   rows: (
     | string
     | React.ReactElement<LinkProps>
@@ -12,11 +13,16 @@ type TableProps = {
 
 function handleTableElement(
   elt: string | React.ReactElement<LinkProps> | React.ReactElement<LinkProps>[],
-  unique_key: number
+  col_index: number,
+  tableAlignment: ("c" | "l")[]
 ): string | React.ReactElement {
+  const styles = `px-5 py-3 ${
+    tableAlignment[col_index] === "c" ? "text-center" : "text-left"
+  }`;
+
   if (Array.isArray(elt)) {
     return (
-      <td key={unique_key}>
+      <td key={col_index} className={styles}>
         <ul>
           {elt.map((link, index) => (
             <li key={index}>{link}</li>
@@ -26,29 +32,37 @@ function handleTableElement(
     );
   }
 
-  return <td key={unique_key}>{elt}</td>;
+  return (
+    <td className={styles} key={col_index}>
+      {elt}
+    </td>
+  );
 }
 
-function Table(props: TableProps) {
+function Table({ tableHeaders, tableAlignment, rows }: TableProps) {
   return (
-    <table>
-      <thead>
-        <tr>
-          {props.tableHeaders.map((headerValue, index) => (
-            <th key={index} scope="col">
-              {headerValue}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {props.rows.map((row, index) => (
-          <tr key={index}>
-            {row.map((elt, index) => handleTableElement(elt, index))}
+    <div className="rounded-lg overflow-hidden h-fit w-fit">
+      <table className="table-auto border-separate border-spacing-x-0 border-spacing-y-0">
+        <thead>
+          <tr className="bg-neutral-700">
+            {tableHeaders.map((headerValue, index) => (
+              <th key={index} className="px-5 py-3">
+                {headerValue}
+              </th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {rows.map((row, index) => (
+            <tr key={index} className="odd:bg-neutral-800 even:bg-neutral-700">
+              {row.map((elt, index) =>
+                handleTableElement(elt, index, tableAlignment)
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

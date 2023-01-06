@@ -9,16 +9,20 @@ function convertLabsToTableRows(
   return labs.map((lab) => [lab.handout, lab.out, lab.solution]);
 }
 
-function Labs() {
+function LabSection() {
   return (
-    <section>
+    <section id="labs" className="w-screen">
       <SectionTitle text="Labs" />
-      <Table
-        tableHeaders={["Lab", "Out", "Solutions"]}
-        rows={convertLabsToTableRows(labs)}
-      />
+
+      <div className="flex justify-center">
+        <Table
+          tableHeaders={["Lab", "Out", "Solutions"]}
+          tableAlignment={["l", "c", "c"]}
+          rows={convertLabsToTableRows(labs)}
+        />
+      </div>
     </section>
   );
 }
 
-export default Labs;
+export default LabSection;

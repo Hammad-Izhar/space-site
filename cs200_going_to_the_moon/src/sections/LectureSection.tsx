@@ -20,16 +20,20 @@ function convertLecturesToTableRows(
   ]);
 }
 
-function Lectures() {
+function LectureSection() {
   return (
-    <section>
-      <SectionTitle text="Lecture" />
-      <Table
-        tableHeaders={["Date", "Topic", "Video", "Handouts", "Files"]}
-        rows={convertLecturesToTableRows(lectures)}
-      />
+    <section id="lectures" className="w-screen">
+      <SectionTitle text="Lectures" />
+
+      <div className="flex justify-center">
+        <Table
+          tableHeaders={["Date", "Topic", "Video", "Handouts", "Files"]}
+          tableAlignment={["c", "l", "c", "c", "c"]}
+          rows={convertLecturesToTableRows(lectures)}
+        />
+      </div>
     </section>
   );
 }
 
-export default Lectures;
+export default LectureSection;

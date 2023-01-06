@@ -3,26 +3,26 @@ import { Lab } from "./types";
 
 export const labs: Lab[] = [
   {
-    name: "Lab 1 (CS15 Students)",
-    handout: <Link text="Lab 1 (CS15 Students)" href="" />,
+    name: "Lab 1 - Warmup (CS15 Students)",
+    handout: <Link text="Lab 1 - Warmup (CS15 Students)" href="" />,
     out: "",
     solution: "",
   },
   {
-    name: "Lab 1 (CS17/111/112/19 Students)",
-    handout: <Link text="Lab 1 (CS17/111/112/19 Students)" href="" />,
+    name: "Lab 1 - Warmup (CS17/111/112/19 Students)",
+    handout: <Link text="Lab 1 - Warmup (CS17/111/112/19 Students)" href="" />,
     out: "",
     solution: "",
   },
   {
-    name: "Lab 2 (CS15 Students)",
-    handout: <Link text="Lab 2 (CS15 Students)" href="" />,
+    name: "Lab 2 - Warmup (CS15 Students)",
+    handout: <Link text="Lab 2 - Warmup (CS15 Students)" href="" />,
     out: "",
     solution: "",
   },
   {
-    name: "Lab 2 (CS17/111/112/19 Students)",
-    handout: <Link text="Lab 2 (CS17/111/112/19 Students)" href="" />,
+    name: "Lab 2 - Warmup (CS17/111/112/19 Students)",
+    handout: <Link text="Lab 2 - Warmup (CS17/111/112/19 Students)" href="" />,
     out: "",
     solution: "",
   },

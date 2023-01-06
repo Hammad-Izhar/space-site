@@ -1,7 +1,7 @@
 import { Link } from "../components/Link";
-import { Assignment } from "./types";
+import { Homework, Project } from "./types";
 
-export const homeworkList: Assignment[] = [
+export const homeworkList: Homework[] = [
   {
     name: "Homework 0 (Setup)",
     handout: <Link text="Homework 0 (Setup)" href="" />,
@@ -45,8 +45,8 @@ export const homeworkList: Assignment[] = [
     due: "2/10",
   },
   {
-    name: "Homework 2 (Doubly Linkked Lists)",
-    handout: <Link text="Homework 2 (Doubly Linkked Lists)" href="" />,
+    name: "Homework 2 (Doubly Linked Lists)",
+    handout: <Link text="Homework 2 (Doubly Linked Lists)" href="" />,
     out: "2/10",
     due: "2/16",
   },
@@ -76,17 +76,25 @@ export const homeworkList: Assignment[] = [
   },
 ];
 
-export const projectList: Assignment[] = [
+export const projectList: Project[] = [
   {
     name: "Decision Tree",
     handout: <Link text="Decision Tree" href="" />,
     out: "2/17",
     due: "3/2",
+    gearup: [
+      <Link text="Gear-Up Video" href="" />,
+      <Link text="Gear-Up Slides" href="" />,
+    ],
   },
   {
     name: "Travel Planner",
     handout: <Link text="Travel Planner" href="" />,
     out: "3/10",
     due: "3/23",
+    gearup: [
+      <Link text="Gear-Up Video" href="" />,
+      <Link text="Gear-Up Slides" href="" />,
+    ],
   },
 ];

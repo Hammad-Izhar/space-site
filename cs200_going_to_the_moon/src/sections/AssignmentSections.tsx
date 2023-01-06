@@ -2,6 +2,7 @@ import Table from "../components/Table";
 import { Homework, Project } from "../data/types";
 import { homeworkList, projectList } from "../data/assigments";
 import React from "react";
+import { SectionTitle } from "../components/SectionTitle";
 
 function convertHomeworkToTableRows(
   assignments: Homework[]
@@ -23,24 +24,25 @@ function convertProjectToTableRows(
   ]);
 }
 
-function Assignments() {
+function AssignmentSection() {
   return (
-    <section>
-      <h2>Assignments</h2>
+    <section id="assignments" className="w-screen">
+      <SectionTitle text="Assignments" />
 
-      <h3>Homeworks</h3>
-      <Table
-        tableHeaders={["Assignment", "Out", "In"]}
-        rows={convertHomeworkToTableRows(homeworkList)}
-      />
-
-      <h3>Projects</h3>
-      <Table
-        tableHeaders={["Project", "Out", "In", "Gear-Up"]}
-        rows={convertProjectToTableRows(projectList)}
-      />
+      <div className="flex justify-center space-x-4">
+        <Table
+          tableHeaders={["Assignment", "Out", "In"]}
+          tableAlignment={["l", "c", "c"]}
+          rows={convertHomeworkToTableRows(homeworkList)}
+        />
+        <Table
+          tableHeaders={["Project", "Out", "In", "Gear-Up"]}
+          tableAlignment={["l", "c", "c"]}
+          rows={convertProjectToTableRows(projectList)}
+        />
+      </div>
     </section>
   );
 }
 
-export default Assignments;
+export default AssignmentSection;
