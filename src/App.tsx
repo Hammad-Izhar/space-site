@@ -9,7 +9,7 @@ import FeatureSection from "./sections/FeatureSection";
 
 function App() {
   return (
-    <>
+    <div className="w-screen h-screen overflow-x-hidden overflow-y-scroll">
       <FeatureSection />
       <AboutSection />
       <LectureSection />
@@ -17,7 +17,7 @@ function App() {
       <LabSection />
       <CalendarSection />
       <StaffSection />
-    </>
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 
 function AboutSection() {
   return (
-    <section id="about" className="min-h-screen overflow-hidden">
+    <section id="about">
       <div className="flex justify-between flex-wrap mx-10">
         <AboutParagraph />
         <Sidebar />

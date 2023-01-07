@@ -2,7 +2,7 @@ import { SectionTitle } from "../components/SectionTitle";
 
 function CalendarSection() {
   return (
-    <section id="hours" className="w-screen min-h-screen">
+    <section id="hours" className="flex flex-col">
       <SectionTitle text="Hours and Assignments" />
       <div className="flex justify-center">
         <iframe

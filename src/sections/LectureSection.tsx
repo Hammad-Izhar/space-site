@@ -22,9 +22,8 @@ function convertLecturesToTableRows(
 
 function LectureSection() {
   return (
-    <section id="lectures" className="w-screen">
+    <section id="lectures" className="flex flex-col">
       <SectionTitle text="Lectures" />
-
       <div className="flex justify-center">
         <Table
           tableHeaders={["Date", "Topic", "Video", "Handouts", "Files"]}

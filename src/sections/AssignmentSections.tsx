@@ -26,7 +26,7 @@ function convertProjectToTableRows(
 
 function AssignmentSection() {
   return (
-    <section id="assignments" className="w-screen">
+    <section id="assignments" className="flex flex-col">
       <SectionTitle text="Assignments" />
 
       <div className="flex flex-wrap justify-between">
