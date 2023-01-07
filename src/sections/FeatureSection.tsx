@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import Nebula from "../components/Nebula";
 import { useInView } from "react-intersection-observer";
 

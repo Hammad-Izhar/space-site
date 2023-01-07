@@ -34,7 +34,7 @@ _This page is a ***work in progress!*** You can visit the Brown CSCI 200
 landing page and view previous offerings<a href=https://cs.brown.edu/courses/csci0200/> here</a>_`;
 
   return (
-    <div className="basis-2/3 flex flex-col min-w-[400px]">
+    <div className="basis-2/3 flex flex-col">
       <SubsectionTitle text="CS200" />
       <ReactMarkdown
         className="w-4/5 text-lg [&>p]:mb-3"
