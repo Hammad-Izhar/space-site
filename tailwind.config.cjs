@@ -3,6 +3,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
+      backgroundImage: {
+        "galaxy": "url('/src/assets/textures/galaxy.jpg)'"
+      },
       fontFamily:{
         'orbitron': ["Orbitron"],
         'body': ["Inter", "Helvetica", "sans-serif"]

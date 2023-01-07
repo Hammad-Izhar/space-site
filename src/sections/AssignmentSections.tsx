@@ -26,20 +26,24 @@ function convertProjectToTableRows(
 
 function AssignmentSection() {
   return (
-    <section id="assignments" className="w-screen min-h-screen">
+    <section id="assignments" className="w-screen">
       <SectionTitle text="Assignments" />
 
-      <div className="flex justify-center space-x-4">
-        <Table
-          tableHeaders={["Assignment", "Out", "In"]}
-          tableAlignment={["l", "c", "c"]}
-          rows={convertHomeworkToTableRows(homeworkList)}
-        />
-        <Table
-          tableHeaders={["Project", "Out", "In", "Gear-Up"]}
-          tableAlignment={["l", "c", "c"]}
-          rows={convertProjectToTableRows(projectList)}
-        />
+      <div className="flex flex-wrap justify-between">
+        <div className="flex justify-center basis-1/2 flex-grow">
+          <Table
+            tableHeaders={["Assignment", "Out", "In"]}
+            tableAlignment={["l", "c", "c"]}
+            rows={convertHomeworkToTableRows(homeworkList)}
+          />
+        </div>
+        <div className="flex justify-center basis-1/2 flex-grow">
+          <Table
+            tableHeaders={["Project", "Out", "In", "Gear-Up"]}
+            tableAlignment={["l", "c", "c"]}
+            rows={convertProjectToTableRows(projectList)}
+          />
+        </div>
       </div>
     </section>
   );

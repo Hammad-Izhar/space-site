@@ -41,7 +41,7 @@ function handleTableElement(
 
 function Table({ tableHeaders, tableAlignment, rows }: TableProps) {
   return (
-    <div className="rounded-lg overflow-hidden h-fit w-fit">
+    <div className="rounded-lg overflow-hidden h-fit w-fit m-5">
       <table className="table-auto border-separate border-spacing-x-0 border-spacing-y-0">
         <thead>
           <tr className="bg-neutral-700">

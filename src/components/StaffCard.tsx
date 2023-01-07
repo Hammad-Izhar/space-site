@@ -6,7 +6,8 @@ type StaffCardProps = {
 
 function StaffCard({ person }: StaffCardProps) {
   const { name, pronouns, hometown, about, image } = person;
-  const imageURL = new URL(`/src/assets/${image}`, import.meta.url).href;
+  const imageURL = new URL(`/src/assets/staff-images/${image}`, import.meta.url)
+    .href;
 
   return (
     <div className="flex bg-neutral-700 w-4/5 max-w-xs flex-col items-center p-4 text-center rounded-xl m-3">
