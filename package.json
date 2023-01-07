@@ -6,16 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.51.15",
+    "@react-three/fiber": "^8.10.0",
+    "@types/three": "^0.148.0",
     "eslint": "^8.31.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.4",
-    "rehype-raw": "^6.1.1"
+    "rehype-raw": "^6.1.1",
+    "three": "^0.148.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

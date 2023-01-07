@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily:{
         'orbitron': ["Orbitron"],
-        'body': ["Europa", "Helvetica", "sans-serif"]
+        'body': ["Inter", "Helvetica", "sans-serif"]
       },
       colors: {
         indigo: {
