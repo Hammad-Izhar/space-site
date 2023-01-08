@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import Nebula from "../components/Nebula";
 import { useInView } from "react-intersection-observer";
+import { Planet } from "../components/Planet";
 
 function FeatureSection() {
   const { ref, inView } = useInView();

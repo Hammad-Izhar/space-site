@@ -4,7 +4,7 @@ import { professors, htas, utas } from "../data/staff";
 
 function StaffSection() {
   return (
-    <section id="staff">
+    <section id="staff" className="my-5">
       <div>
         <SectionTitle text="Professors" />
         <StaffGroup people={professors} />

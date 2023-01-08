@@ -11,7 +11,7 @@ function convertLabsToTableRows(
 
 function LabSection() {
   return (
-    <section id="labs">
+    <section id="labs" className="my-5">
       <SectionTitle text="Labs" />
 
       <div className="flex justify-center">

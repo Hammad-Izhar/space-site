@@ -22,7 +22,7 @@ function convertLecturesToTableRows(
 
 function LectureSection() {
   return (
-    <section id="lectures">
+    <section id="lectures" className="my-5">
       <SectionTitle text="Lectures" />
       <div className="flex justify-center">
         <Table

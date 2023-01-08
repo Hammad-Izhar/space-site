@@ -2,6 +2,9 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { Link } from "../components/Link";
 import { SubsectionTitle } from "./SubsectionTitle";
+import { useInView } from "react-intersection-observer";
+import { Planet } from "./Planet";
+import { Canvas } from "@react-three/fiber";
 
 type HTMLAnchorProps = React.DetailedHTMLProps<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -15,6 +18,7 @@ function convertLinkTagToLinkComponent({ href }: HTMLAnchorProps) {
 }
 
 function AboutParagraph() {
+  const { ref, inView } = useInView();
   const markdown = `This is the _third_-ever offering of **CS200**, which replaces CS16 and
 CS18! Students will take CS200 after taking CS 111, 112, 150, 170, or
 190. CS200 is offered every semester (both fall and spring). Hopefully
@@ -44,6 +48,16 @@ landing page and view previous offerings<a href=https://cs.brown.edu/courses/csc
           a: convertLinkTagToLinkComponent,
         }}
       />
+      <Canvas
+        ref={ref}
+        camera={{
+          fov: 60,
+          position: [0, 0, 1],
+          rotation: [1.16, -0.12, 0.27],
+        }}
+      >
+        {inView && <Planet />}
+      </Canvas>
     </div>
   );
 }

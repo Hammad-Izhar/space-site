@@ -71,8 +71,8 @@ const Nebula = ({ numClouds }: NebulaProps) => {
       />
       <pointLight args={["#2365b5", 50, 450, 1.7]} position={[300, 200, 200]} />
 
-      <fogExp2 args={["#242424", 0.001]} />
-      <color attach="background" args={["#242424"]} />
+      <fogExp2 args={["#262626", 0.001]} />
+      <color attach="background" args={["#262626"]} />
 
       <instancedMesh ref={nebulaRef} args={[undefined, undefined, numClouds]}>
         <planeGeometry args={[500, 500]} />
