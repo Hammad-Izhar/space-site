@@ -48,7 +48,7 @@ landing page and view previous offerings<a href=https://cs.brown.edu/courses/csc
           a: convertLinkTagToLinkComponent,
         }}
       />
-      <Canvas
+      {/* <Canvas
         ref={ref}
         camera={{
           fov: 60,
@@ -57,7 +57,7 @@ landing page and view previous offerings<a href=https://cs.brown.edu/courses/csc
         }}
       >
         {inView && <Planet />}
-      </Canvas>
+      </Canvas> */}
     </div>
   );
 }
