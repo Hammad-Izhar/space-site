@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { NavLink } from "./NavLink";
+import rocketURL from "../assets/misc/rocketship.svg";
 
 type NavbarProps = {
   scrollPosition: number;
@@ -46,17 +47,6 @@ const determineRocketPosition = (
     scrollPosition
   );
 
-  console.log({
-    liPositions,
-    sectionPositions,
-    scrollPosition,
-    lerpVal,
-    prevSectionPosition,
-    nextSectionPosition,
-    prevSectionLIPosition,
-    nextSectionLIPosition,
-  });
-
   return lerpVal;
 };
 
@@ -97,7 +87,7 @@ function Navbar({ scrollPosition, sectionPositions }: NavbarProps) {
               scrollPosition
             )}px`,
           }}
-          src="/src/assets/misc/rocketship.svg"
+          src={rocketURL}
         />
         <ul
           ref={ulRef}

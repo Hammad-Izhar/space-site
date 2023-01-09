@@ -16,16 +16,16 @@ export const NavLink = ({ title, img }: NavLinkProps) => {
   // img styles
   const imgSizeStyles = img.toLowerCase().includes("saturn") ? "w-16" : "w-10";
 
-  // link styles
-
+  // The span is required! https://stackoverflow.com/questions/796087/make-a-div-into-a-link
   return (
     <div
-      className={`flex flex-col justify-center items-center p-5 ${colorStyles} ${animationStyles}`}
+      className={`flex flex-col justify-center items-center p-5 ${colorStyles} ${animationStyles} relative`}
       style={gradientStyle}
     >
       <img className={imgSizeStyles} src={imgURL} />
       <a href={`#${title}`} className={`font-orbitron uppercase p-4`}>
         {title}
+        <span className="absolute top-0 left-0 w-full h-full z-10"></span>
       </a>
     </div>
   );
