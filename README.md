@@ -165,7 +165,7 @@ import exampleURL from "path/to/img";
 const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 ```
 
-# TODOs
+# TODOs/Ideas
 
 ## General
 
@@ -182,7 +182,6 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 -   Update links
 -   Make bundle size smaller
 -   Take a look at the Google Lighthouse Report
--   Add more planet textures (saturn might be difficult)
 -   Make Tailwind styles look nicer?
 -   Update the Project type to use a tuple rather than an array of links
 -   Is there a difference between lecture handouts and lecture files?
@@ -195,3 +194,7 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 ## `ThreeCanvas.tsx`
 
 -   Make more general by adding `props`
+
+## `Planet.tsx`
+
+-   Add custom rotation/position/size settings for each planet?

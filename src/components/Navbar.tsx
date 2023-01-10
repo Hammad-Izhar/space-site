@@ -56,8 +56,8 @@ function Navbar({ scrollPosition, sectionPositions }: NavbarProps) {
         ["lectures", "mars.svg"],
         ["assignments", "jupiter.svg"],
         ["labs", "saturn.svg"],
-        ["hours", "neptune.svg"],
-        ["staff", "uranus.svg"],
+        ["hours", "uranus.svg"],
+        ["staff", "neptune.svg"],
     ];
 
     const ulRef = useRef<HTMLUListElement>(null!);
