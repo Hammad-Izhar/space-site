@@ -19,7 +19,7 @@ export type Project = {
 export type Lecture = {
     date: string;
     topic: string;
-    video_url: string | ReactElement<LinkProps>;
+    video_url: "" | ReactElement<LinkProps>;
     lecture_handout: ReactElement<LinkProps>[];
     lecture_files: ReactElement<LinkProps>[];
 };
@@ -28,7 +28,7 @@ export type Lab = {
     name: string;
     handout: ReactElement<LinkProps>;
     out: string;
-    solution: string | ReactElement<LinkProps>;
+    solution: "" | ReactElement<LinkProps>;
 };
 
 export type Person = {

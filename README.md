@@ -37,6 +37,116 @@ This directory contains all the main "pages" of the website. Currently the websi
 
 This directory contains all the files that the components/pages pull data from to populate the website.
 
+### `assignments.tsx`
+
+Exports two arrays containing the information about all homework assignments and projects.
+
+```ts
+type Homework = {
+    // Name of the HW assignment
+    // NOTE: not rendered in the table
+    name: string;
+
+    // Link to the handout for the HW assignment
+    // NOTE: this is the text that is rendered in the table
+    handout: ReactElement<LinkProps>;
+
+    // The date that the assignment is released formatted as ____
+    out: string;
+
+    // The date that the assignment is due formatted as ____
+    due: string;
+};
+
+type Project = {
+    // Name of the project
+    // NOTE: not rendered in the table
+    name: string;
+
+    // Link to the handout for the project
+    // NOTE: this is the text that is rendered in the table
+    handout: ReactElement<LinkProps>;
+
+    // The date that the project is released formatted as ____
+    out: string;
+
+    // The date that the project is due formatted as ____
+    due: string;
+
+    // A pair of links to the gear-up slides + video for the project
+    gearup: ReactElement<LinkProps>[];
+};
+```
+
+### `labs.tsx`
+
+Exports an array containing the information about all labs.
+
+```ts
+type Lab = {
+    // Name of the lab
+    // NOTE: not rendered in the table
+    name: string;
+
+    // Link to the lab handout
+    // NOTE: this is the text that is rendered in the table
+    handout: ReactElement<LinkProps>;
+
+    // The date that the lab is released formatted as ____
+    out: string;
+
+    // An empty string if the solutions have not been released or a link to the solutions
+    solution: "" | ReactElement<LinkProps>;
+};
+```
+
+### `lectures.tsx`
+
+Exports an array containing the information about all lectures.
+
+```ts
+type Lecture = {
+    // The date that the lectures was held on formatted as ____
+    date: string;
+
+    // The general topic of the lecture formatted as ____
+    topic: string;
+
+    // A link to to the Panopto video or the empty string if the video has not been released
+    video_url: string | ReactElement<LinkProps>;
+
+    // Links to any handouts required for the lecture
+    lecture_handout: ReactElement<LinkProps>[];
+
+    // Links to any files required for the lecture
+    lecture_files: ReactElement<LinkProps>[];
+};
+```
+
+### `staff.tsx`
+
+Exports three arrays containing information about each of the professors, HTAs, and UTAs.
+
+```ts
+type Person = {
+    // Name of the person
+    name: string;
+
+    // Pronouns of the person
+    pronouns: string;
+
+    // Hometown of the person
+    hometown: string;
+
+    // Small blurb to appear on card
+    about: string;
+
+    // Path to the image of the person
+    // NOTE: relative to /src/assets/staff-images
+    image: string;
+};
+```
+
 ## `components/`
 
 This directory contains all the minor/reusable parts of the website.
@@ -47,7 +157,7 @@ This directory contains all the pictures and videos used in the website.
 
 Note: Vite mangles the names to the files in this directory, therefore, to reference files in this directory one must either directly import it (if the file is known beforehand) or one must dynamically import it by first converting it to a `URL` and getting its `href`.
 
-```js
+```ts
 // Static Import
 import exampleURL from "path/to/img";
 
@@ -67,11 +177,15 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 -   Add _stars_
 -   Fill in more of the empty void perhaps?
 -   Update lectures info
--   Update dates
+-   Update dates (+ decide on date format, YYYY-MM-DD or something else)
 -   Update staff info
 -   Update links
 -   Make bundle size smaller
 -   Take a look at the Google Lighthouse Report
+-   Add more planet textures (saturn might be difficult)
+-   Make Tailwind styles look nicer?
+-   Update the Project type to use a tuple rather than an array of links
+-   Is there a difference between lecture handouts and lecture files?
 
 ## `App.tsx`
 

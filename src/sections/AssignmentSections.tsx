@@ -1,6 +1,6 @@
 import Table from "../components/Table";
 import { Homework, Project } from "../data/types";
-import { homeworkList, projectList } from "../data/assigments";
+import { homeworkList, projectList } from "../data/assignments";
 import React from "react";
 import { SectionTitle } from "../components/SectionTitle";
 
