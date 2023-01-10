@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { NavLink } from "./NavLink";
-import rocketURL from "../assets/misc/rocketship.svg";
+import rocketURL from "../assets/imgs/rocketship.svg";
 
 type NavbarProps = {
   scrollPosition: number;

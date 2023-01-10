@@ -1,9 +1,9 @@
 import { useFrame, useLoader } from "@react-three/fiber";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { memo, useEffect, useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
 import { Mesh, MeshLambertMaterial } from "three";
 
-export const Planet = () => {
+const Planet = () => {
   const planetRef = useRef<Mesh>(null!);
 
   const moonURL = new URL(`/src/assets/textures/moon.jpg`, import.meta.url)
@@ -35,3 +35,5 @@ export const Planet = () => {
     </>
   );
 };
+
+export default memo(Planet);

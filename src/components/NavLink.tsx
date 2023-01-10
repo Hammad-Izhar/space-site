@@ -4,7 +4,7 @@ type NavLinkProps = {
 };
 
 export const NavLink = ({ title, img }: NavLinkProps) => {
-  const imgURL = new URL(`/src/assets/misc/${img}`, import.meta.url).href;
+  const imgURL = new URL(`/src/assets/imgs/${img}`, import.meta.url).href;
 
   // div styles
   const animationStyles = `transition-[background] duration-300`;

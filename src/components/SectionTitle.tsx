@@ -1,5 +1,6 @@
 export function SectionTitle({ text }: { text: string }) {
-  const rocketURL = new URL(`/src/assets/rocket.png`, import.meta.url).href;
+  const rocketURL = new URL(`/src/assets/imgs/rocket.png`, import.meta.url)
+    .href;
 
   return (
     <div className="flex justify-center items-center">

@@ -1,10 +1,6 @@
-import { Canvas } from "@react-three/fiber";
-import Nebula from "../components/Nebula";
-import { useInView } from "react-intersection-observer";
-import { Planet } from "../components/Planet";
+import nebulaURL from "../assets/video/nebula.webm";
 
 function FeatureSection() {
-  const { ref, inView } = useInView();
   return (
     <section
       id="home"
@@ -14,17 +10,13 @@ function FeatureSection() {
         Program Design with Data Structures and Algorithms
       </h2>
 
-      <div ref={ref} className="w-screen h-screen">
-        <Canvas
-          camera={{
-            fov: 60,
-            position: [0, 0, 1],
-            rotation: [1.16, -0.12, 0.27],
-          }}
-        >
-          {inView && <Nebula numClouds={50} />}
-        </Canvas>
-      </div>
+      <video
+        className="w-screen h-screen object-fill"
+        loop={true}
+        autoPlay={true}
+        muted={true}
+        src={nebulaURL}
+      />
     </section>
   );
 }

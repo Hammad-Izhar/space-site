@@ -8,6 +8,7 @@ import AboutSection from "./sections/AboutSection";
 import FeatureSection from "./sections/FeatureSection";
 import { Footer } from "./components/Footer";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import ThreeCanvas from "./three-js-renders/ThreeJSRenderCanvas";
 
 function App() {
   const sizeStyles = "w-screen h-screen overflow-x-hidden overflow-y-scroll";
@@ -48,7 +49,7 @@ function App() {
       ref={appRef}
       className={`${sizeStyles} ${scrollStyles} bg-neutral-800`}
     >
-      {/* <FeatureSection /> */}
+      <FeatureSection />
       <Navbar
         scrollPosition={scrollPosition}
         sectionPositions={sectionOffsets}

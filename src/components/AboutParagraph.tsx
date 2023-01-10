@@ -3,8 +3,8 @@ import rehypeRaw from "rehype-raw";
 import { Link } from "../components/Link";
 import { SubsectionTitle } from "./SubsectionTitle";
 import { useInView } from "react-intersection-observer";
-import { Planet } from "./Planet";
 import { Canvas } from "@react-three/fiber";
+import Planet from "./Planet";
 
 type HTMLAnchorProps = React.DetailedHTMLProps<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -48,7 +48,7 @@ landing page and view previous offerings<a href=https://cs.brown.edu/courses/csc
           a: convertLinkTagToLinkComponent,
         }}
       />
-      {/* <Canvas
+      <Canvas
         ref={ref}
         camera={{
           fov: 60,
@@ -57,7 +57,7 @@ landing page and view previous offerings<a href=https://cs.brown.edu/courses/csc
         }}
       >
         {inView && <Planet />}
-      </Canvas> */}
+      </Canvas>
     </div>
   );
 }
