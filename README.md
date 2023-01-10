@@ -11,7 +11,7 @@ npm install
 vite run dev
 ```
 
-Alternatively, to deploy to Github Pages:
+To deploy to Github Pages:
 
 ```bash
 npm run deploy
