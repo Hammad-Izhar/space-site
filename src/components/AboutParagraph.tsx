@@ -41,23 +41,25 @@ landing page and view previous offerings<a href=https://cs.brown.edu/courses/csc
     <div className="basis-2/3 flex flex-col">
       <SubsectionTitle text="CS200" />
       <ReactMarkdown
-        className="w-4/5 text-lg [&>p]:mb-3"
+        className="w-4/5 text-md [&>p]:mb-3"
         children={markdown}
         rehypePlugins={[rehypeRaw]}
         components={{
           a: convertLinkTagToLinkComponent,
         }}
       />
-      <Canvas
-        ref={ref}
-        camera={{
-          fov: 60,
-          position: [0, 0, 1],
-          rotation: [1.16, -0.12, 0.27],
-        }}
-      >
-        {inView && <Planet />}
-      </Canvas>
+      <div className="h-56">
+        <Canvas
+          ref={ref}
+          camera={{
+            fov: 60,
+            position: [0, 0, 1],
+            rotation: [1.16, -0.12, 0.27],
+          }}
+        >
+          {inView && <Planet />}
+        </Canvas>
+      </div>
     </div>
   );
 }

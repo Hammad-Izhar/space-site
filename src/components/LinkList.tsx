@@ -8,8 +8,8 @@ type LinkListProps = {
 function LinkList({ links, title }: LinkListProps) {
   return (
     <>
-      <h3 className="text-xl">{title}</h3>
-      <ul className="text-lg">
+      <h3 className="text-md">{title}</h3>
+      <ul className="text-sm">
         {links.map((link, index) => (
           <li key={index}>{link}</li>
         ))}

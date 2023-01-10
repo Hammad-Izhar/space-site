@@ -61,6 +61,7 @@ function Navbar({ scrollPosition, sectionPositions }: NavbarProps) {
   ];
 
   const ulRef = useRef<HTMLUListElement>(null!);
+  const rocketRef = useRef<HTMLImageElement>(null!);
   const [liPositions, setLIPositions] = useState<number[]>([]);
 
   useEffect(() => {
@@ -70,7 +71,10 @@ function Navbar({ scrollPosition, sectionPositions }: NavbarProps) {
         const left = li.getBoundingClientRect().left;
         const right = li.getBoundingClientRect().right;
 
-        return (left + right) / 2 - 40;
+        // Must subtract off half the rocket width to ensure the rocket is centered
+        return (
+          (left + right - rocketRef.current.getBoundingClientRect().width) / 2
+        );
       })
     );
   }, []);
@@ -79,7 +83,7 @@ function Navbar({ scrollPosition, sectionPositions }: NavbarProps) {
     <nav className="sticky top-0 bg-neutral-800 z-50">
       <div className="flex relative">
         <img
-          className="w-20 z-10 absolute top-5"
+          className="w-16 z-10 absolute top-2"
           style={{
             left: `${determineRocketPosition(
               liPositions,
@@ -87,11 +91,12 @@ function Navbar({ scrollPosition, sectionPositions }: NavbarProps) {
               scrollPosition
             )}px`,
           }}
+          ref={rocketRef}
           src={rocketURL}
         />
         <ul
           ref={ulRef}
-          className="flex m-0 p-0 w-full h-full items-stretch justify-around"
+          className="flex w-full h-full items-stretch justify-around"
         >
           {navLinks.map(([link, img], index) => (
             <li className="w-full h-full" key={index}>

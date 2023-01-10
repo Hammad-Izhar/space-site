@@ -4,7 +4,7 @@ import { professors, htas, utas } from "../data/staff";
 
 function StaffSection() {
   return (
-    <section id="staff" className="my-5">
+    <section id="staff" className="min-h-screen">
       <div>
         <SectionTitle text="Professors" />
         <StaffGroup people={professors} />

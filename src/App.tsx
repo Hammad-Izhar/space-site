@@ -7,12 +7,9 @@ import StaffSection from "./sections/StaffSection";
 import AboutSection from "./sections/AboutSection";
 import FeatureSection from "./sections/FeatureSection";
 import { Footer } from "./components/Footer";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import ThreeCanvas from "./three-js-renders/ThreeJSRenderCanvas";
+import { useLayoutEffect, useRef, useState } from "react";
 
 function App() {
-  const sizeStyles = "w-screen h-screen overflow-x-hidden overflow-y-scroll";
-  const scrollStyles = "scroll-smooth scroll-pt-36";
   const appRef = useRef<HTMLDivElement>(null!);
 
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -33,7 +30,9 @@ function App() {
     setSectionOffsets(
       navbarSectionIDs.map(
         (sectionID) =>
-          (document.getElementById(sectionID)?.offsetTop as number) - 144
+          // Must substract off the scroll padding in pixels!
+          // TODO: come up with a way of getting this off the appRef itself
+          (document.getElementById(sectionID)?.offsetTop as number) - 96
       )
     );
   };
@@ -44,6 +43,8 @@ function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollPosition, sectionOffsets]);
 
+  const sizeStyles = "w-screen h-screen overflow-x-hidden overflow-y-scroll";
+  const scrollStyles = "scroll-smooth scroll-pt-24";
   return (
     <div
       ref={appRef}

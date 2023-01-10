@@ -39,7 +39,7 @@ function Sidebar() {
 
   return (
     <div className="basis-1/3">
-      <h2 className="font-orbitron font-bold text-4xl mb-5 mt-12">Resources</h2>
+      <h2 className="font-orbitron font-bold text-3xl mt-8 mb-3">Resources</h2>
 
       <LinkList title="Course Materials" links={courseMaterials} />
       <LinkList title="Lab Forms" links={labForms} />

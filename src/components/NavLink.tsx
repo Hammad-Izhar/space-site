@@ -14,16 +14,16 @@ export const NavLink = ({ title, img }: NavLinkProps) => {
   } as React.CSSProperties;
 
   // img styles
-  const imgSizeStyles = img.toLowerCase().includes("saturn") ? "w-16" : "w-10";
+  const imgSizeStyles = img.toLowerCase().includes("saturn") ? "w-14" : "w-8";
 
   // The span is required! https://stackoverflow.com/questions/796087/make-a-div-into-a-link
   return (
     <div
-      className={`flex flex-col justify-center items-center p-5 ${colorStyles} ${animationStyles} relative`}
+      className={`flex flex-col justify-center items-center p-2 ${colorStyles} ${animationStyles} relative`}
       style={gradientStyle}
     >
       <img className={imgSizeStyles} src={imgURL} />
-      <a href={`#${title}`} className={`font-orbitron uppercase p-4`}>
+      <a href={`#${title}`} className={`font-orbitron uppercase p-2`}>
         {title}
         <span className="absolute top-0 left-0 w-full h-full z-10"></span>
       </a>
