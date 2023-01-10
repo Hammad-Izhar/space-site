@@ -198,3 +198,5 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 ## `Planet.tsx`
 
 -   Add custom rotation/position/size settings for each planet?
+-   Height maps for the terrestrial planets would be cool!
+-   Better lighting/colors/textures?
