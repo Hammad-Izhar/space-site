@@ -7,19 +7,19 @@ import { Canvas } from "@react-three/fiber";
 import Planet from "./Planet";
 
 type HTMLAnchorProps = React.DetailedHTMLProps<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
 >;
 
 function convertLinkTagToLinkComponent({ href }: HTMLAnchorProps) {
-  if (href === undefined) return <span>here</span>;
+    if (href === undefined) return <span>here</span>;
 
-  return <Link text="here" href={href} />;
+    return <Link text="here" href={href} />;
 }
 
 function AboutParagraph() {
-  const { ref, inView } = useInView();
-  const markdown = `This is the _third_-ever offering of **CS200**, which replaces CS16 and
+    const { ref, inView } = useInView();
+    const markdown = `This is the _third_-ever offering of **CS200**, which replaces CS16 and
 CS18! Students will take CS200 after taking CS 111, 112, 150, 170, or
 190. CS200 is offered every semester (both fall and spring). Hopefully
 this will create more flexible options for students. Like CS16/CS18,
@@ -37,31 +37,31 @@ course in your cart, you should have access.
 _This page is a ***work in progress!*** You can visit the Brown CSCI 200
 landing page and view previous offerings<a href=https://cs.brown.edu/courses/csci0200/> here</a>_`;
 
-  return (
-    <div className="basis-2/3 flex flex-col">
-      <SubsectionTitle text="CS200" />
-      <ReactMarkdown
-        className="w-4/5 text-md [&>p]:mb-3"
-        children={markdown}
-        rehypePlugins={[rehypeRaw]}
-        components={{
-          a: convertLinkTagToLinkComponent,
-        }}
-      />
-      <div className="h-56">
-        <Canvas
-          ref={ref}
-          camera={{
-            fov: 60,
-            position: [0, 0, 1],
-            rotation: [1.16, -0.12, 0.27],
-          }}
-        >
-          {inView && <Planet />}
-        </Canvas>
-      </div>
-    </div>
-  );
+    return (
+        <div className="basis-2/3 flex flex-col">
+            <SubsectionTitle text="CS200" />
+            <ReactMarkdown
+                className="w-4/5 text-md [&>p]:mb-3"
+                children={markdown}
+                rehypePlugins={[rehypeRaw]}
+                components={{
+                    a: convertLinkTagToLinkComponent,
+                }}
+            />
+            <div className="h-56">
+                <Canvas
+                    ref={ref}
+                    camera={{
+                        fov: 60,
+                        position: [0, 0, 1],
+                        rotation: [1.16, -0.12, 0.27],
+                    }}
+                >
+                    {inView && <Planet />}
+                </Canvas>
+            </div>
+        </div>
+    );
 }
 
 export default AboutParagraph;

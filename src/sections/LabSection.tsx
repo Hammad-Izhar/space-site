@@ -4,25 +4,25 @@ import { labs } from "../data/labs";
 import { Lab } from "../data/types";
 
 function convertLabsToTableRows(
-  labs: Lab[]
+    labs: Lab[]
 ): (string | React.ReactElement)[][] {
-  return labs.map((lab) => [lab.handout, lab.out, lab.solution]);
+    return labs.map((lab) => [lab.handout, lab.out, lab.solution]);
 }
 
 function LabSection() {
-  return (
-    <section id="labs" className="min-h-screen">
-      <SectionTitle text="Labs" />
+    return (
+        <section id="labs" className="min-h-screen">
+            <SectionTitle text="Labs" />
 
-      <div className="flex justify-center">
-        <Table
-          tableHeaders={["Lab", "Out", "Solutions"]}
-          tableAlignment={["l", "c", "c"]}
-          rows={convertLabsToTableRows(labs)}
-        />
-      </div>
-    </section>
-  );
+            <div className="flex justify-center">
+                <Table
+                    tableHeaders={["Lab", "Out", "Solutions"]}
+                    tableAlignment={["l", "c", "c"]}
+                    rows={convertLabsToTableRows(labs)}
+                />
+            </div>
+        </section>
+    );
 }
 
 export default LabSection;
