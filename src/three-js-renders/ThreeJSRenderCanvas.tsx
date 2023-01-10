@@ -13,13 +13,11 @@ function record(canvas: HTMLCanvasElement, time: number) {
       mimeType: "video/webm; codecs=vp9",
     });
 
-    //ondataavailable will fire in interval of `time || 4000 ms`
     console.log("start");
     mediaRecorder.start(time || 4000);
 
     mediaRecorder.ondataavailable = function (event) {
       recordedChunks.push(event.data);
-      // after stop `dataavilable` event run one more time
       if (mediaRecorder.state === "recording") {
         console.log("end");
         mediaRecorder.stop();
@@ -40,8 +38,7 @@ const ThreeCanvas = () => {
 
   useEffect(() => {
     const fetchVideo = async () => {
-      // Nebula repeats ~ 222.58 seconds
-      const url = await record(canvasRef.current, 222.58 * 1000);
+      const url = await record(canvasRef.current, (10 * Math.PI + 1) * 1000);
       FileSaver.saveAs(url as string);
       console.log(url);
     };
@@ -53,11 +50,6 @@ const ThreeCanvas = () => {
     <div className="w-screen h-screen">
       <Canvas
         ref={canvasRef}
-        // Nebula
-        // fov: 60,
-        // position: [0, 0, 1],
-        // rotation: [1.16, -0.12, 0.27],
-
         camera={{
           fov: 60,
           position: [0, 0, 1],

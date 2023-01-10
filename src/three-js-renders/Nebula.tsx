@@ -43,10 +43,13 @@ const Nebula = ({ numClouds }: NebulaProps) => {
   useFrame(({ clock }) => {
     for (let cloudID = 0; cloudID <= numClouds; cloudID++) {
       const [rotateX, rotateY, rotateZ] = clouds[cloudID].rotation;
-      clouds[cloudID].rotation = [rotateX, rotateY, rotateZ - 0.001];
 
       dummyCloud.position.set(...clouds[cloudID].position);
-      dummyCloud.rotation.set(...clouds[cloudID].rotation);
+      dummyCloud.rotation.set(
+        rotateX,
+        rotateY,
+        rotateZ + clock.getElapsedTime() / 5
+      );
 
       dummyCloud.updateMatrix();
 
