@@ -200,6 +200,7 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 -   Add custom rotation/position/size settings for each planet?
 -   Height maps for the terrestrial planets would be cool!
 -   Better lighting/colors/textures?
+-   Instead of the moon and the earth seperate, have the moon orbit around the earth to scale?
 
 ## `data/`
 
