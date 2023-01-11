@@ -5,7 +5,7 @@ type LinkListProps = {
     title: string;
 };
 
-function LinkList({ links, title }: LinkListProps) {
+export const LinkList = ({ links, title }: LinkListProps) => {
     return (
         <>
             <h3 className="text-md">{title}</h3>
@@ -16,6 +16,4 @@ function LinkList({ links, title }: LinkListProps) {
             </ul>
         </>
     );
-}
-
-export default LinkList;
+};

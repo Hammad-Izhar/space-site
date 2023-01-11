@@ -4,7 +4,7 @@ type StaffCardProps = {
     person: Person;
 };
 
-function StaffCard({ person }: StaffCardProps) {
+export const StaffCard = ({ person }: StaffCardProps) => {
     const { name, pronouns, hometown, about, image } = person;
     const imageURL = new URL(
         `/src/assets/staff-images/${image}`,
@@ -25,6 +25,4 @@ function StaffCard({ person }: StaffCardProps) {
             <p>{about}</p>
         </div>
     );
-}
-
-export default StaffCard;
+};

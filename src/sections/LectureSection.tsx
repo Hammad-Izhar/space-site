@@ -4,13 +4,13 @@ import Table from "../components/Table";
 import { lectures } from "../data/lectures";
 import { Lecture } from "../data/types";
 
-function convertLecturesToTableRows(
+const convertLecturesToTableRows = (
     lectures: Lecture[]
 ): (
     | string
     | React.ReactElement<LinkProps>
     | React.ReactElement<LinkProps>[]
-)[][] {
+)[][] => {
     return lectures.map((lecture) => [
         lecture.date,
         lecture.topic,
@@ -18,9 +18,9 @@ function convertLecturesToTableRows(
         lecture.lecture_handout,
         lecture.lecture_files,
     ]);
-}
+};
 
-function LectureSection() {
+export const LectureSection = () => {
     return (
         <section id="lectures" className="min-h-screen">
             <SectionTitle text="Lectures" />
@@ -39,6 +39,4 @@ function LectureSection() {
             </div>
         </section>
     );
-}
-
-export default LectureSection;
+};

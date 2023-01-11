@@ -1,11 +1,11 @@
 import { Person } from "../data/types";
-import StaffCard from "./StaffCard";
+import { StaffCard } from "./StaffCard";
 
 type StaffGroupProps = {
     people: Person[];
 };
 
-function StaffGroup({ people }: StaffGroupProps) {
+export const StaffGroup = ({ people }: StaffGroupProps) => {
     return (
         <div className="flex flex-wrap justify-around">
             {people.map((person, index) => (
@@ -13,6 +13,6 @@ function StaffGroup({ people }: StaffGroupProps) {
             ))}
         </div>
     );
-}
+};
 
 export default StaffGroup;

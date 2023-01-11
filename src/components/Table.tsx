@@ -11,14 +11,14 @@ type TableProps = {
     )[][];
 };
 
-function handleTableElement(
+export const handleTableElement = (
     elt:
         | string
         | React.ReactElement<LinkProps>
         | React.ReactElement<LinkProps>[],
     col_index: number,
     tableAlignment: ("c" | "l")[]
-): string | React.ReactElement {
+): string | React.ReactElement => {
     const styles = `px-5 py-3 ${
         tableAlignment[col_index] === "c" ? "text-center" : "text-left"
     }`;
@@ -40,7 +40,7 @@ function handleTableElement(
             {elt}
         </td>
     );
-}
+};
 
 function Table({ tableHeaders, tableAlignment, rows }: TableProps) {
     return (

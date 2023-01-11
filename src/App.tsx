@@ -1,15 +1,15 @@
 import Navbar from "./components/Navbar";
-import LectureSection from "./sections/LectureSection";
-import AssignmentSection from "./sections/AssignmentSections";
-import LabSection from "./sections/LabSection";
-import CalendarSection from "./sections/CalendarSection";
-import StaffSection from "./sections/StaffSection";
-import AboutSection from "./sections/AboutSection";
-import FeatureSection from "./sections/FeatureSection";
+import { LectureSection } from "./sections/LectureSection";
+import { AssignmentSection } from "./sections/AssignmentSections";
+import { LabSection } from "./sections/LabSection";
+import { CalendarSection } from "./sections/CalendarSection";
+import { StaffSection } from "./sections/StaffSection";
+import { AboutSection } from "./sections/AboutSection";
+import { FeatureSection } from "./sections/FeatureSection";
 import { Footer } from "./components/Footer";
 import { useLayoutEffect, useRef, useState } from "react";
 
-function App() {
+export const App = () => {
     const appRef = useRef<HTMLDivElement>(null!);
 
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -65,6 +65,4 @@ function App() {
             <Footer />
         </div>
     );
-}
-
-export default App;
+};

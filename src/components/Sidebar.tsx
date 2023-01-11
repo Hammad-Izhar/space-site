@@ -1,40 +1,40 @@
 import { Link } from "./Link";
-import LinkList from "./LinkList";
+import { LinkList } from "./LinkList";
 
-function Sidebar() {
+export const Sidebar = () => {
     const courseMaterials = [
-        <Link text="Syllabus" href="" />,
-        <Link text="EdStem" href="" />,
-        <Link text="Gradescope" href="" />,
-        <Link text="Hours" href="" />,
-        <Link text="Extension Request Form" href="" />,
+        <Link key={0} text="Syllabus" href="" />,
+        <Link key={1} text="EdStem" href="" />,
+        <Link key={2} text="Gradescope" href="" />,
+        <Link key={3} text="Hours" href="" />,
+        <Link key={4} text="Extension Request Form" href="" />,
     ];
 
     const labForms = [
-        <Link text="Permanant Lab Switch Form" href="" />,
-        <Link text="Temporary Lab Switch Form" href="" />,
+        <Link key={0} text="Permanant Lab Switch Form" href="" />,
+        <Link key={1} text="Temporary Lab Switch Form" href="" />,
     ];
 
     const generalResources = [
-        <Link text="Collaboration Policy" href="" />,
-        <Link text="Github Guide" href="" />,
-        <Link text="RegExp Guide" href="" />,
-        <Link text="TA Hours Guide" href="" />,
-        <Link text="Terminal Commands" href="" />,
-        <Link text="Gradescope Submission Guide" href="" />,
-        <Link text="Memory Diagram Guide" href="" />,
+        <Link key={0} text="Collaboration Policy" href="" />,
+        <Link key={1} text="Github Guide" href="" />,
+        <Link key={2} text="RegExp Guide" href="" />,
+        <Link key={3} text="TA Hours Guide" href="" />,
+        <Link key={4} text="Terminal Commands" href="" />,
+        <Link key={5} text="Gradescope Submission Guide" href="" />,
+        <Link key={6} text="Memory Diagram Guide" href="" />,
     ];
 
     const javaGuides = [
-        <Link text="IntelliJ Setup Guide" href="" />,
-        <Link text="Java Style Guide" href="" />,
+        <Link key={0} text="IntelliJ Setup Guide" href="" />,
+        <Link key={1} text="Java Style Guide" href="" />,
     ];
 
     const pythonGuides = [
-        <Link text="Java to Python Guide" href="" />,
-        <Link text="VSCode and Python Setup Guide" href="" />,
-        <Link text="Python Style Guide" href="" />,
-        <Link text="Python Testing Guide" href="" />,
+        <Link key={0} text="Java to Python Guide" href="" />,
+        <Link key={1} text="VSCode and Python Setup Guide" href="" />,
+        <Link key={2} text="Python Style Guide" href="" />,
+        <Link key={3} text="Python Testing Guide" href="" />,
     ];
 
     return (
@@ -50,6 +50,4 @@ function Sidebar() {
             <LinkList title="Python Guides" links={pythonGuides} />
         </div>
     );
-}
-
-export default Sidebar;
+};

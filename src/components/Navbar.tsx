@@ -1,10 +1,25 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "./NavLink";
 import rocketURL from "../assets/imgs/rocketship.svg";
 
 type NavbarProps = {
     scrollPosition: number;
     sectionPositions: number[];
+};
+
+const lerp = (
+    fromMin: number,
+    fromMax: number,
+    toMin: number,
+    toMax: number,
+    val: number
+) => ((val - fromMin) * (toMax - toMin)) / (fromMax - fromMin) + toMin;
+
+const insertIndex = (list: number[], val: number) => {
+    for (let i = 0; i < list.length; i++) {
+        if (val < list[i]) return i;
+    }
+    return list.length;
 };
 
 const determineRocketPosition = (
@@ -14,22 +29,8 @@ const determineRocketPosition = (
 ) => {
     sectionPositions.sort((a, b) => a - b);
 
-    const navbarSectionIDs = [
-        "about",
-        "lectures",
-        "assignments",
-        "labs",
-        "hours",
-        "staff",
-    ];
     const prevSectionIndex = insertIndex(sectionPositions, scrollPosition) - 1;
     const nextSectionIndex = prevSectionIndex + 1;
-
-    const prevSectionPosition = sectionPositions[prevSectionIndex];
-    const nextSectionPosition = sectionPositions[nextSectionIndex];
-
-    const prevSectionLIPosition = liPositions[prevSectionIndex];
-    const nextSectionLIPosition = liPositions[nextSectionIndex];
 
     if (prevSectionIndex < 0) {
         return liPositions[0];
@@ -50,7 +51,7 @@ const determineRocketPosition = (
     return lerpVal;
 };
 
-function Navbar({ scrollPosition, sectionPositions }: NavbarProps) {
+export const Navbar = ({ scrollPosition, sectionPositions }: NavbarProps) => {
     const navLinks: [string, string][] = [
         ["about", "earth.svg"],
         ["lectures", "mars.svg"],
@@ -110,21 +111,6 @@ function Navbar({ scrollPosition, sectionPositions }: NavbarProps) {
             </div>
         </nav>
     );
-}
+};
 
 export default Navbar;
-
-const lerp = (
-    fromMin: number,
-    fromMax: number,
-    toMin: number,
-    toMax: number,
-    val: number
-) => ((val - fromMin) * (toMax - toMin)) / (fromMax - fromMin) + toMin;
-
-const insertIndex = (list: number[], val: number) => {
-    for (let i = 0; i < list.length; i++) {
-        if (val < list[i]) return i;
-    }
-    return list.length;
-};

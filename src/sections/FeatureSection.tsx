@@ -1,6 +1,6 @@
 import nebulaURL from "../assets/video/nebula.webm";
 
-function FeatureSection() {
+export const FeatureSection = () => {
     return (
         <section
             id="home"
@@ -19,6 +19,4 @@ function FeatureSection() {
             />
         </section>
     );
-}
-
-export default FeatureSection;
+};

@@ -83,8 +83,8 @@ export const projectList: Project[] = [
         out: "2/17",
         due: "3/2",
         gearup: [
-            <Link text="Gear-Up Video" href="" />,
-            <Link text="Gear-Up Slides" href="" />,
+            <Link key={0} text="Gear-Up Video" href="" />,
+            <Link key={1} text="Gear-Up Slides" href="" />,
         ],
     },
     {
@@ -93,8 +93,8 @@ export const projectList: Project[] = [
         out: "3/10",
         due: "3/23",
         gearup: [
-            <Link text="Gear-Up Video" href="" />,
-            <Link text="Gear-Up Slides" href="" />,
+            <Link key={0} text="Gear-Up Video" href="" />,
+            <Link key={1} text="Gear-Up Slides" href="" />,
         ],
     },
 ];

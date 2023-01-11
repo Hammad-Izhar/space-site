@@ -4,27 +4,28 @@ import { homeworkList, projectList } from "../data/assignments";
 import React from "react";
 import { SectionTitle } from "../components/SectionTitle";
 
-function convertHomeworkToTableRows(
+const convertHomeworkToTableRows = (
     assignments: Homework[]
-): (string | React.ReactElement)[][] {
+): (string | React.ReactElement)[][] => {
     return assignments.map((assignment) => [
         assignment.handout,
         assignment.out,
         assignment.due,
     ]);
-}
-function convertProjectToTableRows(
+};
+
+const convertProjectToTableRows = (
     assignments: Project[]
-): (string | React.ReactElement | React.ReactElement[])[][] {
+): (string | React.ReactElement | React.ReactElement[])[][] => {
     return assignments.map((assignment) => [
         assignment.handout,
         assignment.out,
         assignment.due,
         assignment.gearup,
     ]);
-}
+};
 
-function AssignmentSection() {
+export const AssignmentSection = () => {
     return (
         <section id="assignments" className="my-5 min-h-screen">
             <SectionTitle text="Assignments" />
@@ -47,6 +48,4 @@ function AssignmentSection() {
             </div>
         </section>
     );
-}
-
-export default AssignmentSection;
+};

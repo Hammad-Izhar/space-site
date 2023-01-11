@@ -1,7 +1,6 @@
-export function SectionTitle({ text }: { text: string }) {
-    const rocketURL = new URL(`/src/assets/imgs/rocket.png`, import.meta.url)
-        .href;
+import rocketURL from "/src/assets/imgs/rocket.png";
 
+export const SectionTitle = ({ text }: { text: string }) => {
     return (
         <div className="flex justify-center items-center">
             <img src={rocketURL} className="w-12 h-12 invisible md:visible" />
@@ -11,4 +10,4 @@ export function SectionTitle({ text }: { text: string }) {
             <img src={rocketURL} className="w-12 h-12 invisible md:visible" />
         </div>
     );
-}
+};

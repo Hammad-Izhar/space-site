@@ -7,10 +7,10 @@ export const lectures: Lecture[] = [
         topic: "Merging our skill sets",
         video_url: <Link text="video" href="" />,
         lecture_handout: [
-            <Link text="handout 1" href="" />,
-            <Link text="handout 2" href="" />,
+            <Link key={0} text="handout 1" href="" />,
+            <Link key={1} text="handout 2" href="" />,
         ],
-        lecture_files: [<Link text="file 1" href="" />],
+        lecture_files: [<Link key={0} text="file 1" href="" />],
     },
     {
         date: "1/27",
@@ -24,7 +24,7 @@ export const lectures: Lecture[] = [
         topic: "From FP: Classes and Methods",
         video_url: "",
         lecture_handout: [],
-        lecture_files: [<Link text="file 1" href="" />],
+        lecture_files: [<Link key={0} text="file 1" href="" />],
     },
     {
         date: "1/30",

@@ -1,6 +1,6 @@
 import { SectionTitle } from "../components/SectionTitle";
 
-function CalendarSection() {
+export const CalendarSection = () => {
     return (
         <section id="hours" className="min-h-screen">
             <SectionTitle text="Hours and Assignments" />
@@ -14,6 +14,4 @@ function CalendarSection() {
             </div>
         </section>
     );
-}
-
-export default CalendarSection;
+};

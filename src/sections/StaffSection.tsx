@@ -2,7 +2,7 @@ import { SectionTitle } from "../components/SectionTitle";
 import StaffGroup from "../components/StaffGroup";
 import { professors, htas, utas } from "../data/staff";
 
-function StaffSection() {
+export const StaffSection = () => {
     return (
         <section id="staff" className="min-h-screen">
             <div>
@@ -17,6 +17,4 @@ function StaffSection() {
             </div>
         </section>
     );
-}
-
-export default StaffSection;
+};

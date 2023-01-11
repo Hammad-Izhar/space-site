@@ -3,13 +3,13 @@ import Table from "../components/Table";
 import { labs } from "../data/labs";
 import { Lab } from "../data/types";
 
-function convertLabsToTableRows(
+export const convertLabsToTableRows = (
     labs: Lab[]
-): (string | React.ReactElement)[][] {
+): (string | React.ReactElement)[][] => {
     return labs.map((lab) => [lab.handout, lab.out, lab.solution]);
-}
+};
 
-function LabSection() {
+export const LabSection = () => {
     return (
         <section id="labs" className="min-h-screen">
             <SectionTitle text="Labs" />
@@ -23,6 +23,4 @@ function LabSection() {
             </div>
         </section>
     );
-}
-
-export default LabSection;
+};

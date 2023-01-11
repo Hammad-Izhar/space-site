@@ -3,7 +3,7 @@ export type LinkProps = {
     href: string;
 };
 
-export function Link({ text, href }: { text: string; href: string }) {
+export const Link = ({ text, href }: { text: string; href: string }) => {
     return (
         <a
             href={href}
@@ -12,4 +12,4 @@ export function Link({ text, href }: { text: string; href: string }) {
             {text}
         </a>
     );
-}
+};

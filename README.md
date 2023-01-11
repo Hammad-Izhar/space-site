@@ -185,6 +185,8 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 -   Make Tailwind styles look nicer?
 -   Update the Project type to use a tuple rather than an array of links
 -   Is there a difference between lecture handouts and lecture files?
+-   Video fallback as an image
+-   Re-render on resize
 
 ## `App.tsx`
 
