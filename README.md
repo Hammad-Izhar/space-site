@@ -151,6 +151,18 @@ type Person = {
 
 This directory contains all the minor/reusable parts of the website.
 
+## `hooks/`
+
+This directory contains hooks used throughout the website.
+
+### `useScrollCapture.tsx`
+
+Contains the `useScrollCapture` hook which takes in a callback function and an initial state. Every time a scroll event is captured the callback is called and the value is returned.
+
+### `useResizeCapture.tsx`
+
+The same as the above hook except on window resize!
+
 ## `assets/`
 
 This directory contains all the pictures and videos used in the website.
@@ -191,7 +203,6 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 ## `App.tsx`
 
 -   Dynamically determine the scroll padding of the page so we can compute the section heights without requiring the _magic_ number
--   Maybe make a `useScroll` hook? Not sure if this is even the right use case of React hooks, but worth investigating to make the entire scroll code nicer to look at!
 
 ## `ThreeCanvas.tsx`
 

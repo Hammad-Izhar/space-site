@@ -6,7 +6,7 @@ export const FeatureSection = () => {
             id="home"
             className="w-screen h-screen relative flex justify-center items-center"
         >
-            <h2 className="text-4xl font-orbitron text-center bg-opacity-20 absolute z-10 bg-neutral-800 p-5 rounded-2xl shadow-md shadow-neutral-800">
+            <h2 className="text-4xl font-orbitron text-center bg-opacity-20 absolute z-10 bg-neutral-800 p-5 rounded-2xl shadow-md shadow-neutral-800 backdrop-blur-xl">
                 Program Design with Data Structures and Algorithms
             </h2>
 

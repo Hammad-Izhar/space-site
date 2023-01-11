@@ -1,11 +1,7 @@
-import { useEffect, useRef, useState } from "react";
 import { NavLink } from "./NavLink";
+import { useScrollCapture } from "../hooks/useScrollCapture";
+import { useResizeCapture } from "../hooks/useResizeCapture";
 import rocketURL from "../assets/imgs/rocketship.svg";
-
-type NavbarProps = {
-    scrollPosition: number;
-    sectionPositions: number[];
-};
 
 const lerp = (
     fromMin: number,
@@ -51,7 +47,12 @@ const determineRocketPosition = (
     return lerpVal;
 };
 
-export const Navbar = ({ scrollPosition, sectionPositions }: NavbarProps) => {
+export const Navbar = () => {
+    const scrollPosition = useScrollCapture(computeScrollPosition, 0);
+    const [sectionPositions, liPositions] = useResizeCapture(computeOffsets, [
+        [],
+        [],
+    ]);
     const navLinks: [string, string][] = [
         ["about", "earth.svg"],
         ["lectures", "mars.svg"],
@@ -61,30 +62,8 @@ export const Navbar = ({ scrollPosition, sectionPositions }: NavbarProps) => {
         ["staff", "neptune.svg"],
     ];
 
-    const ulRef = useRef<HTMLUListElement>(null!);
-    const rocketRef = useRef<HTMLImageElement>(null!);
-    const [liPositions, setLIPositions] = useState<number[]>([]);
-
-    useEffect(() => {
-        const liElements = [...ulRef.current.children];
-        setLIPositions(
-            liElements.map((li) => {
-                const left = li.getBoundingClientRect().left;
-                const right = li.getBoundingClientRect().right;
-
-                // Must subtract off half the rocket width to ensure the rocket is centered
-                return (
-                    (left +
-                        right -
-                        rocketRef.current.getBoundingClientRect().width) /
-                    2
-                );
-            })
-        );
-    }, []);
-
     return (
-        <nav className="sticky top-0 bg-neutral-800 z-50">
+        <nav className="sticky top-0 z-50">
             <div className="flex relative">
                 <img
                     className="w-16 z-10 absolute top-2"
@@ -95,12 +74,12 @@ export const Navbar = ({ scrollPosition, sectionPositions }: NavbarProps) => {
                             scrollPosition
                         )}px`,
                     }}
-                    ref={rocketRef}
                     src={rocketURL}
+                    id="rocket"
                 />
                 <ul
-                    ref={ulRef}
                     className="flex w-full h-full items-stretch justify-around"
+                    id="primary-navigation"
                 >
                     {navLinks.map(([link, img], index) => (
                         <li className="w-full h-full" key={index}>
@@ -113,4 +92,44 @@ export const Navbar = ({ scrollPosition, sectionPositions }: NavbarProps) => {
     );
 };
 
-export default Navbar;
+const computeOffsets = (): [number[], number[]] => {
+    const sectionIDs = [
+        "about",
+        "lectures",
+        "assignments",
+        "labs",
+        "hours",
+        "staff",
+    ];
+
+    const sectionOffsets = sectionIDs.map(
+        (sectionID) =>
+            (document.getElementById(sectionID)?.offsetTop as number) - 96
+    );
+
+    const navbarID = "primary-navigation";
+    const rocketID = "rocket";
+    const ul = document.getElementById(navbarID) as HTMLElement;
+    const rocket = document.getElementById(rocketID) as HTMLElement;
+
+    const liElements = [...ul.children];
+    const liOffsets = liElements.map((li) => {
+        const left = li.getBoundingClientRect().left;
+        const right = li.getBoundingClientRect().right;
+
+        // Must subtract off half the rocket width to ensure the rocket is centered
+        return (
+            ((left + right - rocket.getBoundingClientRect().width) as number) /
+            2
+        );
+    });
+
+    return [sectionOffsets, liOffsets];
+};
+
+const computeScrollPosition = () => {
+    const appID = "App";
+    const app = document.getElementById(appID) as HTMLElement;
+
+    return app.scrollTop;
+};
