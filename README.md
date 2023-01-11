@@ -182,6 +182,8 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 ## General
 
 -   Make the website more responsive for mobile layouts! Mostly navbar + about section
+-   Make a `utils` directory for helper functions and move certain functions there
+-   move all links on the site to the `data` directory so if someone wanted to change they are all in one place
 -   Is there a difference between lecture handouts and lecture files?
 -   Overall documentation
 -   Make bundle size smaller
