@@ -182,23 +182,10 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 ## General
 
 -   Make the website more responsive for mobile layouts! Mostly navbar + about section
--   New color scheme?/check for accesibility?
--   Change color scheme to use custom Tailwind properties (`primary`, `secondary`, `accent`, etc.) for easy changing later on
+-   Is there a difference between lecture handouts and lecture files?
 -   Overall documentation
--   Make styling nicer?
--   Add _stars_
--   Fill in more of the empty void perhaps?
--   Update lectures info
--   Update dates (+ decide on date format, YYYY-MM-DD or something else)
--   Update staff info
--   Update links
 -   Make bundle size smaller
 -   Take a look at the Google Lighthouse Report
--   Make Tailwind styles look nicer?
--   Update the Project type to use a tuple rather than an array of links
--   Is there a difference between lecture handouts and lecture files?
--   Video fallback as an image
--   Re-render on resize
 
 ## `App.tsx`
 
@@ -213,3 +200,19 @@ const exampleURL = new URL(`path/to/${img}}`, import.meta.url).href;
 -   Add custom rotation/position/size settings for each planet?
 -   Height maps for the terrestrial planets would be cool!
 -   Better lighting/colors/textures?
+
+## `data/`
+
+-   Update the Project type to use a tuple rather than an array of links
+-   Update lectures info
+-   Update dates (+ decide on date format, YYYY-MM-DD or something else)
+-   Update staff info
+-   Update links
+
+## Styling/Visuals
+
+-   Change color scheme to use custom Tailwind properties (`primary`, `secondary`, `accent`, etc.) for easy changing later on
+-   Make styling nicer?
+-   Add _stars_
+-   New color scheme?/check for accesibility?
+-   Fill in more of the empty void perhaps?
